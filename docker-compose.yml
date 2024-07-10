@@ -1,0 +1,14 @@
+﻿services:
+  grpc.dbserviceapp:
+    image: grpc.dbserviceapp
+    build:
+      context: ./gRPC.DbServiceApp
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:6001;http://+:5001
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=Qwerty1
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=dockerdemo.pfx
+    ports:
+        - "5001:5001"
+        - "6001:6001"

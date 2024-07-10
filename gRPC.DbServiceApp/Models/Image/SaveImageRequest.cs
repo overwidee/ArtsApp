@@ -2,5 +2,5 @@
 
 public class SaveImageRequest
 {
-    
+    public string Name { get; set; }
 }

@@ -1,0 +1,21 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "gRPC.DbServiceApp";
+
+package image;
+
+// The greeting service definition.
+service Image {
+  // Sends a greeting
+  rpc SaveImage (SaveImageRequest) returns (ResponseResult);
+}
+
+// The request message containing the user's name.
+message SaveImageRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message ResponseResult {
+  string message = 1;
+}
